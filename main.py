@@ -7,7 +7,8 @@ a long red carpet.",
   "Kings Room": "You are in the kings room where he sleeps, hes not here",
   "Dinning Room":"Now you're in the dinning room where the king eats",
   "Throne Room":"You ended up in the throne room where the king sits",
-  "Bathroom": "You are in the bathroom where the king does his buisness"
+  "Bathroom": "You are in the bathroom where the king does his buisness",
+  "Weapon Storage": "You are in the weapon storage room"
       }
 
 room_location = {
@@ -21,14 +22,14 @@ room_location = {
 tile = ["Main Hall", "Kitchen",
         "Kings Room","Dinning Room",
         "Throne Room","Bathroom",
-        "Hallway"
+        "Hallway","Weapon Storage"
        ]
 
 
 tiles = [
-       [tile[0],tile[4],tile[5]],
-       [tile[1],tile[2],tile[6]],
-       [tile[3],tile[6],tile[6]]
+       [tile[0],tile[5],tile[2]],
+       [tile[1],tile[6],tile[4]],
+       [tile[6],tile[3],tile[7]]
        ]
 # external file name 
 mapfile = 'map.txt'
@@ -41,12 +42,22 @@ def export_map():
     except: 
         print("Somethinf went wrong")
     else: 
+        print(" ")
+    finally:
+        print("Welcome to the game")
+
+
+def read_map():
+    try:
+        with open(mapfile, 'r') as file:
+            print(file.read())
+    except:
+        print("Something went wrong")
+    else:
         print("Here is the map to the castle")
     finally:
-        print("Good luck!")
-
-
+        print("Good luck")
 
 export_map()
-
+read_map()
     
